@@ -1,0 +1,130 @@
+:root {
+  --black-primary: #000000;
+  --black-secondary: #333333;
+  --grey-primary: #9E9E9E;
+  --grey-secondary: #545454;
+  --ivory-primary: #FFFDFC;
+  --white-secondary: #FFFFFF;
+
+  --font-primary: 'Montserrat', sans-serif;
+  --font-secondary: 'Cormorant Garamond', serif;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+
+  --fs-12: 12px;
+  --fs-14: 14px;
+  --fs-15: 15px;
+  --fs-16: 16px;
+  --fs-20: 20px;
+  --fs-32: 32px;
+  --fs-40: 40px;
+
+  --space-xs: 4px;
+  --space-s: 8px;
+  --space-xm: 10px;
+  --space-m: 16px;
+  --space-sl: 18px;
+  --space-l: 24px;
+  --space-xl: 32px;
+  --space-xxl: 50px;
+
+  --lh-120: 1.2;
+  --lh-150: 1.5;
+
+  --ls-negative: -0.05em;
+
+  --shadow-main: 0 0 12px 0 rgba(0, 0, 0, 0.1);
+
+  --container-width: 1400px;
+
+  --bp-mobile: 375px;
+  --bp-tablet: 768px;
+  --bp-desktop: 1024px;
+  --bp-large: 1440px;
+}
+
+html, body {
+  font-family: var(--font-primary), sans-serif;
+  font-size: var(--fs-16);
+  color: var(--black-primary);
+  line-height: var(--lh-150);
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: var(--space-xxl) var(--space-xl);
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-sl) var(--space-m);
+  background: var(--black-primary);
+  color: var(--white-secondary);
+  text-transform: uppercase;
+  gap: var(--space-l);
+}
+
+.separator {
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--grey-primary);
+  transform: rotate(90deg);
+}
+
+.separator:before {
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: var(--grey-primary);
+}
+
+.separator:after {
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: var(--grey-primary);
+}
+
+.separator .vertical {
+  transform: rotate(180deg);
+}
+
+.photo-card {
+  max-width: 400px;
+  max-height: 522px;
+  padding: 42px 38px 104px;
+
+  background: var(--white-secondary);
+  box-shadow: var(--shadow-main);
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.calendar-card {
+  width: 300px;
+  height: 395px;
+  padding: 40px;
+  border: 1px solid var(--black-secondary);
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+.calendar-card:after {
+  width: 300px;
+  height: 395px;
+  content: '';
+  position: absolute;
+  top: var(--space-xm);
+  right: var(--space-xm);
+  z-index: 0;
+  background: transparent;
+}
