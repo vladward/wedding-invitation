@@ -19,6 +19,7 @@
   --fs-20: 20px;
   --fs-32: 32px;
   --fs-40: 40px;
+  --fs-128: 128px;
 
   --space-xs: 4px;
   --space-s: 8px;
@@ -127,4 +128,57 @@ html, body {
   right: var(--space-xm);
   z-index: 0;
   background: transparent;
+}
+
+.line {
+  width: 50px;
+  height: 1px;
+  background: var(--black-secondary);
+}
+
+.greetings {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+}
+
+.greetings__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  margin: var(--space-l) var(--space-xl);
+}
+
+.greetings__info-title {
+  font-size: clamp(var(--fs-40), 10vw, var(--fs-128));
+  font-family: var(--font-secondary), serif;
+  font-weight: 400;
+  text-align: center;
+}
+
+.greetings__info-date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-m);
+  text-align: center;
+  font-style: var(--fs-16);
+}
+
+.greetings__image {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  border-top-left-radius: 200px;
+  border-top-right-radius: 200px;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.greetings__image img {
+  width: clamp(406px, 40vw, 536px);
+  max-height: 715px;
 }
