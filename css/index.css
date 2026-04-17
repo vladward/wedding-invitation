@@ -116,6 +116,7 @@ html, body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border: 1px solid var(--black-primary);
 }
 
 .bg-grey {
@@ -170,12 +171,12 @@ html, body {
   border-top-right-radius: 200px;
   object-fit: cover;
   object-position: bottom;
-  margin-bottom: 40px;
 }
 
 .greetings__image img {
   width: clamp(406px, 40vw, 536px);
   max-height: 715px;
+  border: 1px solid var(--black-primary);
 }
 
 /*Moment section*/
@@ -330,6 +331,10 @@ html, body {
 }
 
 @media (min-width: 560px) {
+  .greetings__image, .greetings__image img {
+    margin-bottom: 40px;
+  }
+
   .moment {
     padding: 40px 0;
   }
