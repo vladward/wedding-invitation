@@ -25,6 +25,7 @@
   --fs-32: 32px;
   --fs-40: 40px;
   --fs-48: 48px;
+  --fs-52: 52px;
   --fs-72: 72px;
   --fs-128: 128px;
 
@@ -477,6 +478,60 @@ h2 {
 .timing__info-box-description {
   font-weight: var(--fw-medium);
   font-size: var(--fs-16);
+}
+
+.time-out {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(50px, 12vw, 150px);
+  gap: clamp(24px, 6vw, 80px);
+  background: var(--black-primary);
+}
+
+.timeout-title {
+  font-family: var(--font-secondary), serif;
+  line-height: 1;
+  color: var(--white-secondary);
+  font-size: clamp(var(--fs-32), 5vw, var(--fs-72));
+  text-align: center;
+  font-weight: var(--fw-thin);
+}
+
+.time-out .separation {
+  flex-direction: row;
+  width: 70%;
+  height: 12px;
+}
+
+.time-out .separation .line {
+  width: 100%;
+  height: 1px;
+  background: var(--grey-primary);
+}
+
+.timeout-date-wrapper {
+  display: flex;
+  gap: clamp(8px, 2vw, 47px);
+  color: var(--white-secondary);
+  font-size: clamp(var(--fs-32), 5vw, var(--fs-52));
+  font-weight: var(--fw-semi-bold);
+}
+
+.time-out-date__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.time-out-date__count {
+  text-align: center;
+}
+
+.time-out-date__description {
+  text-align: center;
+  font-weight: var(--fw-thin);
+  font-size: clamp(var(--fs-16), 3vw, var(--fs-24));
 }
 
 
