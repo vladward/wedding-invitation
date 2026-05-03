@@ -480,6 +480,7 @@ h2 {
   font-size: var(--fs-16);
 }
 
+/*Timeout section*/
 .time-out {
   display: flex;
   flex-direction: column;
@@ -534,6 +535,51 @@ h2 {
   font-size: clamp(var(--fs-16), 3vw, var(--fs-24));
 }
 
+/*Contacts section*/
+.contacts {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(50px, 12vw, 150px);
+  gap: clamp(24px, 6vw, 50px);
+}
+
+.contacts__title {
+  font-size: clamp(var(--fs-32), 5vw, var(--fs-72));
+  line-height: 1;
+  font-family: var(--font-secondary), serif;
+  font-weight: var(--fw-medium);
+  text-align: center;
+}
+
+.contacts-info {
+  border: 1px solid var(--black-secondary);
+  padding: 32px clamp(32px, 7vw, 75px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.contacts-info__questions {
+  font-weight: var(--fw-thin);
+  font-size: clamp(var(--fs-14), 3vw, var(--fs-24));
+  color: var(--black-secondary);
+  line-height: clamp(100%, 1vw, 120%);
+}
+
+.contacts-info__honeymooners {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  font-size: clamp(var(--fs-16), 5vw, var(--fs-24));
+  font-weight: var(--fw-thin);
+}
+
+.contacts-info__honeymooners span {
+  font-weight: var(--fw-regular);
+}
 
 @media (min-width: 420px) {
   .waiting {
