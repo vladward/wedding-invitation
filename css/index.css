@@ -581,6 +581,10 @@ h2 {
   font-weight: var(--fw-semi-bold);
 }
 
+.extra-margin {
+  margin-right: 6px;
+}
+
 .time-out-date__container {
   display: flex;
   flex-direction: column;
@@ -850,8 +854,8 @@ footer {
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 
-  padding-top: clamp(30px, 5vw, 50px);
-  padding-bottom: clamp(30px, 5vw, 50px);
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .footer__overlay-title {
@@ -967,6 +971,10 @@ footer {
   .mobile-hidden { display: flex !important; }
 
   .confirmation-dialog { display: none; }
+
+  .confirmation-dialog__form {
+    align-items: center;
+  }
 }
 
 @media (min-width: 768px) {
