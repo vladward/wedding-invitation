@@ -239,6 +239,124 @@
 
 </div>
 
+<!--Confirmation-->
+<div class="confirmation">
+    <div class="confirmation-mobile">
+        <h2 class="confirmation__title">Анкета гостя</h2>
+        <span class="confirmation__description">Просим подтвердить свое присутствие на мероприятии до:</span>
+        <span class="confirmation__date">15 / 07 / 2026</span>
+        <button id="confirmation-dialog-open" class="button desktop-hidden">
+            <span>Подтвердить присутствие</span>
+            <img src="./assets/icon-arrow-right.png" alt="icon-arrow-right"/>
+        </button>
+        <div id="desktop-form-container" class="mobile-hidden"></div>
+    </div>
+
+    <dialog id="confirmation-dialog" class="confirmation-dialog">
+        <button id="confirmation-dialog-close" class="close-btn" type="button">
+            <span class="btn-line"></span>
+            <span class="btn-line"></span>
+        </button>
+        <span class="confirmation-dialog__title">Пожалуйста, подтвердите Ваше присутствие:</span>
+        <div class="separation desktop-hidden">
+            <div class="line"></div>
+            <div class="separator"></div>
+            <div class="line"></div>
+        </div>
+        <div id="modal-form-container">
+            <form method="dialog" id="confirmation-form" class="confirmation-dialog__form">
+            <div class="confirmation-dialog__input-container">
+                <label for="guest-name" class="confirmation-form__label">Как Вас зовут ?</label>
+                <input id="guest-name" required class="confirmation-form__input" name="guest_name" placeholder="Имя, фамилия"/>
+            </div>
+
+            <div class="confirmation-dialog__input-container">
+                <label for="guest-will-come" class="confirmation-form__label">Планируете ли вы присутствовать ?</label>
+                <div id="guest-will-come" class="confirmation-form__radio-container">
+                    <div class="confirmation-form__radio-wrapper">
+                        <input type="radio" id="guest-yes" name="will_come" value="yes" checked/>
+                        <label for="guest-yes">Да, конечно</label>
+                    </div>
+
+                    <div class="confirmation-form__radio-wrapper">
+                        <input type="radio" id="guest-maybe" name="will_come" value="maybe"/>
+                        <label for="guest-maybe">Пока не знаю</label>
+                    </div>
+
+                    <div class="confirmation-form__radio-wrapper">
+                        <input type="radio" id="guest-no" name="will_come" value="no"/>
+                        <label for="guest-no">Не смогу</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="confirmation-dialog__input-container">
+                <label for="guest-with" class="confirmation-form__label">Если Вы планируете присутствовать не одни, заполните поле ниже:</label>
+                <input id="guest-with" class="confirmation-form__input" name="with_guest" placeholder="Имя, фамилия" />
+            </div>
+
+            <div class="confirmation-dialog__input-container">
+                <label for="guest-preferences" class="confirmation-form__label">Ваши предпочтения</label>
+                <div id="guest-preferences" class="confirmation-dialog__input-container">
+                    <div class="confirmation-dialog__input-container preferences">
+                        <input type="checkbox" id="guest-champagne" name="preferences_champagne" class="confirmation-form__checkbox" />
+                        <label for="guest-champagne" class="confirmation-form__label">Шампанское</label>
+                    </div>
+
+                    <div class="confirmation-dialog__input-container preferences">
+                        <input type="checkbox" id="guest-red-wine" name="preferences_red_wine" class="confirmation-form__checkbox" />
+                        <label for="guest-red-wine" class="confirmation-form__label">Красное вино</label>
+                    </div>
+
+                    <div class="confirmation-dialog__input-container preferences">
+                        <input type="checkbox" id="guest-white-wine" name="preferences_white_wine" class="confirmation-form__checkbox" />
+                        <label for="guest-white-wine" class="confirmation-form__label">Белое вино</label>
+                    </div>
+
+                    <div class="confirmation-dialog__input-container preferences">
+                        <input type="checkbox" id="guest-vodka" name="preferences_vodka" class="confirmation-form__checkbox" />
+                        <label for="guest-vodka" class="confirmation-form__label">Водка</label>
+                    </div>
+
+                    <div class="confirmation-dialog__input-container preferences">
+                        <input type="checkbox" id="guest-rum" name="preferences_rum" class="confirmation-form__checkbox" />
+                        <label for="guest-rum" class="confirmation-form__label">Ром</label>
+                    </div>
+
+                    <div class="confirmation-dialog__input-container preferences">
+                        <input type="checkbox" id="guest-whiskey" name="preferences_whiskey" class="confirmation-form__checkbox" />
+                        <label for="guest-whiskey" class="confirmation-form__label">Виски</label>
+                    </div>
+
+                    <div class="confirmation-dialog__input-container preferences">
+                        <input type="checkbox" id="guest-jin" name="preferences_jin" class="confirmation-form__checkbox" />
+                        <label for="guest-jin" class="confirmation-form__label">Джин</label>
+                    </div>
+
+                    <div class="confirmation-dialog__input-container preferences">
+                        <input type="checkbox" id="guest-all" name="preferences_all" class="confirmation-form__checkbox" />
+                        <label for="guest-all" class="confirmation-form__label">Все, что горит</label>
+                    </div>
+
+                    <div class="confirmation-dialog__input-container preferences">
+                        <input type="checkbox" id="guest-nothing" name="preferences_nothing" class="confirmation-form__checkbox" />
+                        <label for="guest-nothing" class="confirmation-form__label">Не пью</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="separation desktop-hidden">
+                <div class="line"></div>
+                <div class="separator"></div>
+                <div class="line"></div>
+            </div>
+
+            <button type="submit" class="button">Отправить</button>
+        </form>
+        </div>
+    </dialog>
+</div>
+
 <!--Footer section-->
 <footer>
     <img src="./assets/footer-img.JPG" alt="footer-image" class="footer__img">
@@ -248,5 +366,66 @@
     </div>
 </footer>
 </body>
-<script></script>
+<script>
+    const dialog = document.getElementById('confirmation-dialog');
+    const openButton = document.getElementById('confirmation-dialog-open');
+    const closeButton = document.getElementById('confirmation-dialog-close');
+    const body = document.getElementsByTagName('body')[0];
+    const form = document.getElementById('confirmation-form');
+    const desktopContainer = document.getElementById('desktop-form-container');
+    const mobileContainer = document.getElementById('modal-form-container');
+
+    openButton.addEventListener('click', async () => {
+        await dialog.showModal();
+        body.style.overflowY = 'hidden';
+    })
+
+    closeButton.addEventListener('click', () => {
+        dialog.close()
+        body.style.overflowY = 'auto';
+    })
+
+    dialog.addEventListener('close', () => {
+        body.style.overflowY = 'auto';
+
+        if (window.innerWidth < 560) {
+            form.reset();
+        }
+    });
+
+    function handleResponsiveForm() {
+        if (window.innerWidth >= 560) {
+            if (!desktopContainer.contains(form)) {
+                desktopContainer.appendChild(form);
+                dialog.close();
+            }
+        } else {
+            if (!mobileContainer.contains(form)) {
+                mobileContainer.appendChild(form);
+            }
+        }
+    }
+
+    window.addEventListener('resize', handleResponsiveForm);
+    handleResponsiveForm();
+
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+        const data = {
+            preferences: {}
+        };
+
+        formData.forEach((value, key) => {
+            if (key.includes('preferences')) {
+                const prefKey = key.replace('preferences_', '').replace(/[\[\]]/g, '');
+                data.preferences[prefKey] = true;
+            } else {
+                data[key] = value;
+            }
+        });
+        console.log('Form Values:', data);
+    })
+</script>
 </html>
