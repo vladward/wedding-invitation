@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <title>Wedding Vlad + Maria</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение на свадьбу Влада и Марии</title>
     <link rel="icon" href="./public/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,10 +16,10 @@
 </head>
 <body>
 <!--Greetings section-->
-<div class="greetings">
+<section class="greetings">
     <div class="greetings__info">
-        <h1 class="greetings__info-title">Владислав<br/> & Мария</h1>
-        <div class="greetings__info-date">
+        <h1 class="greetings__title">Владислав<br/> & Мария</h1>
+        <div class="greetings__date">
             <div class="line"></div>
             29 августа 2026
             <div class="line"></div>
@@ -26,12 +28,12 @@
     <div class="greetings__image">
         <img src="./assets/img-header.JPG" alt="welcome-image" class="greetings__image">
     </div>
-</div>
+</section>
 
 <!--Moment section-->
-<div class="moment">
-    <div class="photo-card">
-        <img src="./assets/img-love.jpg" alt="our-moment-image">
+<section class="moment">
+    <div class="moment__photo-wrapper">
+        <img src="./assets/img-love.jpg" alt="Владислав и Мария в момент счастья" class="moment__photo">
     </div>
     <div class="moment__inner">
         <div class="separation">
@@ -39,7 +41,7 @@
             <div class="separator"></div>
             <div class="line"></div>
         </div>
-        <span class="moment__title">Этот момент настал!</span>
+        <h2 class="moment__title">Этот момент настал!</h2>
         <span class="moment__description">
             Мы верим, что этот день послужит началом нашей счастливой жизни.
             Поэтому не представляем наш праздник без Вашего участия!
@@ -53,13 +55,13 @@
             <div class="line"></div>
         </div>
     </div>
-</div>
+</section>
 
 <!--We are waiting you-->
 <div class="waiting container bg-grey">
     <div class="waiting__info">
-        <span class="waiting__info-title">Мы ждём Вас</span>
-        <span class="waiting__info-description">Не пропустите важное событие этого лета - день нашей свадьбы!</span>
+        <span class="waiting__title">Мы ждём Вас</span>
+        <span class="waiting__description">Не пропустите важное событие этого лета - день нашей свадьбы!</span>
     </div>
 
     <div class="waiting__card-wrapper">
@@ -76,7 +78,7 @@
                     </div>
                 </div>
 
-                <div class="waiting__card-grid">
+                <div class="waiting__calendar" id="calendar-days">
                     <span class="waiting__card-day-name">Пн</span>
                     <span class="waiting__card-day-name">Вт</span>
                     <span class="waiting__card-day-name">Ср</span>
@@ -84,42 +86,6 @@
                     <span class="waiting__card-day-name">Пт</span>
                     <span class="waiting__card-day-name">Сб</span>
                     <span class="waiting__card-day-name">Вс</span>
-                    <span class="waiting__card-day"></span>
-                    <span class="waiting__card-day"></span>
-                    <span class="waiting__card-day"></span>
-                    <span class="waiting__card-day"></span>
-                    <span class="waiting__card-day"></span>
-                    <span class="waiting__card-day">1</span>
-                    <span class="waiting__card-day">2</span>
-                    <span class="waiting__card-day">3</span>
-                    <span class="waiting__card-day">4</span>
-                    <span class="waiting__card-day">5</span>
-                    <span class="waiting__card-day">6</span>
-                    <span class="waiting__card-day">7</span>
-                    <span class="waiting__card-day">8</span>
-                    <span class="waiting__card-day">9</span>
-                    <span class="waiting__card-day">10</span>
-                    <span class="waiting__card-day">11</span>
-                    <span class="waiting__card-day">12</span>
-                    <span class="waiting__card-day">13</span>
-                    <span class="waiting__card-day">14</span>
-                    <span class="waiting__card-day">15</span>
-                    <span class="waiting__card-day">16</span>
-                    <span class="waiting__card-day">17</span>
-                    <span class="waiting__card-day">18</span>
-                    <span class="waiting__card-day">19</span>
-                    <span class="waiting__card-day">20</span>
-                    <span class="waiting__card-day">21</span>
-                    <span class="waiting__card-day">22</span>
-                    <span class="waiting__card-day">23</span>
-                    <span class="waiting__card-day">24</span>
-                    <span class="waiting__card-day">25</span>
-                    <span class="waiting__card-day">26</span>
-                    <span class="waiting__card-day">27</span>
-                    <span class="waiting__card-day">28</span>
-                    <span class="waiting__card-day waiting__card-day--active">29</span>
-                    <span class="waiting__card-day">30</span>
-                    <span class="waiting__card-day">31</span>
                 </div>
             </div>
         </article>
@@ -128,28 +94,28 @@
 </div>
 
 <!--Location section-->
-<div class="container">
+<section class="container">
     <div class="location">
         <h2 class="location__header">Локация</h2>
         <img src="assets/img-place.jpg" alt="location-image" class="location__image">
         <div class="location__footer">
             <div class="location__info">
-                <span class="location__info-title">Усадьба “Долина Заречная”</span>
-                <span class="location__info-description">
+                <span class="location__title">Усадьба “Долина Заречная”</span>
+                <span class="location__description">
                 Гродненская область, Щучинский район, Рожанковский сельсовет, деревня Долина Заречная, 2
             </span>
-                <span class="location__info-time">Сбор гостей - 16:00</span>
+                <time class="location__time" datetime="16:00">Сбор гостей — 16:00</time>
             </div>
             <a class="button" href="https://yandex.by/maps/org/usadba_dolina_zarechnaya/197415965740/?ll=24.738965%2C53.550586&z=16" target="_blank" rel="noopener noreferrer">
                 <span>Как добраться</span>
-                <img src="./assets/icon-arrow-right.png" alt="icon-arrow-right" class="location__footer-button"/>
+                <img src="./assets/icon-arrow-right.png" alt=""/>
             </a>
         </div>
     </div>
-</div>
+</section>
 
 <!--Timing section-->
-<div class="timing container">
+<section class="timing container">
     <h2 class="timing__title">Тайминг</h2>
     <div class="timing__content">
         <div class="timing__icons">
@@ -164,353 +130,209 @@
             <div class="line"></div>
         </div>
         <div class="timing__info">
-            <div class="timing__info-box">
-                <span class="timing__info-box-time">16:00</span>
-                <span class="timing__info-box-description">Сбор гостей</span>
+            <div class="timing__item">
+                <span class="timing__time">16:00</span>
+                <span class="timing__description">Сбор гостей</span>
             </div>
-            <div class="timing__info-box">
-                <span class="timing__info-box-time">16:30</span>
-                <span class="timing__info-box-description">Церемония регистрации</span>
+            <div class="timing__item">
+                <span class="timing__time">16:30</span>
+                <span class="timing__description">Церемония регистрации</span>
             </div>
-            <div class="timing__info-box">
-                <span class="timing__info-box-time">17:30</span>
-                <span class="timing__info-box-description">Банкет</span>
+            <div class="timing__item">
+                <span class="timing__time">17:30</span>
+                <span class="timing__description">Банкет</span>
             </div>
-            <div class="timing__info-box">
-                <span class="timing__info-box-time">00:00</span>
-                <span class="timing__info-box-description">Завершение вечера</span>
+            <div class="timing__item">
+                <span class="timing__time">00:00</span>
+                <span class="timing__description">Завершение вечера</span>
             </div>
         </div>
     </div>
-</div>
+</section>
 
 <!--Time out section-->
-<div class="time-out">
-    <p class="timeout-title">
+<section class="timeout bg-grey">
+    <h2 class="timeout__title">
         До нашей свадьбы осталось
-    </p>
+    </h2>
     <div class="separation">
         <div class="line"></div>
         <div class="separator"></div>
         <div class="line"></div>
     </div>
-    <div class="timeout-date-wrapper">
-        <div class="time-out-date__container">
-            <span id="days" class="time-out-date__count"></span>
-            <span class="time-out-date__description">Дней</span>
+    <div class="timeout__wrapper">
+        <div class="timeout__item">
+            <span id="days" class="timeout__count"></span>
+            <span class="timeout__description">Дней</span>
         </div>
 
         <div>/</div>
 
-        <div class="time-out-date__container">
-            <span id="hours" class="time-out-date__count"></span>
-            <span class="time-out-date__description">Часов</span>
+        <div class="timeout__item">
+            <span id="hours" class="timeout__count"></span>
+            <span class="timeout__description">Часов</span>
         </div>
 
         <div>/</div>
 
-        <div class="time-out-date__container">
-            <span id="minutes" class="time-out-date__count"></span>
-            <span class="time-out-date__description">Минут</span>
+        <div class="timeout__item">
+            <span id="minutes" class="timeout__count"></span>
+            <span class="timeout__description">Минут</span>
         </div>
 
         <div>/</div>
 
-        <div class="time-out-date__container">
-            <span id="seconds" class="time-out-date__count"></span>
-            <span class="time-out-date__description">Секунд</span>
+        <div class="timeout__item">
+            <span id="seconds" class="timeout__count"></span>
+            <span class="timeout__description">Секунд</span>
         </div>
     </div>
-</div>
+</section>
 
 <!--Contacts section-->
-<div class="contacts container">
+<section class="contacts container">
     <h2 class="contacts__title">Контакты</h2>
-    <div class="contacts-info">
-        <span class="contacts-info__questions">По всем вопросам, связанным с мероприятием, Вы можете связаться с нами:</span>
-        <div class="contacts-info__honeymooners">
-            <span>Владислав</span>
+    <div class="contacts__info">
+        <span class="contacts__questions">По всем вопросам, связанным с мероприятием, Вы можете связаться с нами:</span>
+        <div class="contacts__honeymooners">
+            <span class="contacts__name">Владислав</span>
             <a href="tel:+375292329164">+ 375 (29) 232-91-64</a>
         </div>
-        <div class="contacts-info__honeymooners">
-            <span>Мария</span>
-            <a href="tel:375255309333">+ 375 (25) 530-93-33</a>
+        <div class="contacts__honeymooners">
+            <span class="contacts__name">Мария</span>
+            <a href="tel:+375255309333">+ 375 (25) 530-93-33</a>
         </div>
     </div>
-
-</div>
+</section>
 
 <!--Wish list-->
-<div class="wishlist bg-grey">
-    <h3 class="wishlist__title">Наши пожелания</h3>
+<section class="wishlist bg-grey">
+    <h2 class="wishlist__title">Наши пожелания</h2>
     <p class="wishlist__description">
         Мы решили заложить основу нашей <strong>семейной винотеки</strong>!
         Будем очень признательны, если вместо цветов, которые быстро вянут,
         вы подарите нам «букет» в стекле. Мы сохраним ваши подарки и будем
         открывать их уютными вечерами, вспоминая наш праздник и вас.
     </p>
-</div>
+</section>
 
 <!--Confirmation-->
-<div class="confirmation">
-    <div class="confirmation-mobile">
+<section class="confirmation">
+    <div class="confirmation__mobile">
         <h2 class="confirmation__title">Анкета гостя</h2>
         <span class="confirmation__description">Просим подтвердить свое присутствие на мероприятии до:</span>
         <span class="confirmation__date">15 / 07 / 2026</span>
-        <button id="confirmation-dialog-open" class="button desktop-hidden">
+        <button id="confirmation-dialog-open" class="button confirmation__open-btn desktop-hidden">
             <span>Подтвердить присутствие</span>
-            <img src="./assets/icon-arrow-right.png" alt="icon-arrow-right"/>
+            <img src="./assets/icon-arrow-right.png" alt=""/>
         </button>
-        <div id="desktop-form-container" class="mobile-hidden"></div>
+        <div id="desktop-form-container" class="confirmation__desktop-container mobile-hidden"></div>
     </div>
 
-    <dialog id="confirmation-dialog" class="confirmation-dialog">
-        <button id="confirmation-dialog-close" class="close-btn" type="button">
-            <span class="btn-line"></span>
-            <span class="btn-line"></span>
+    <dialog id="confirmation-dialog" class="confirmation__dialog">
+        <button id="confirmation-dialog-close" class="confirmation__close-btn" type="button">
+            <span class="confirmation__btn-line"></span>
+            <span class="confirmation__btn-line"></span>
         </button>
-        <span class="confirmation-dialog__title">Пожалуйста, подтвердите Ваше присутствие:</span>
-        <div class="separation desktop-hidden">
+        <span class="confirmation__dialog-title">Пожалуйста, подтвердите Ваше присутствие:</span>
+        <div class="separation confirmation__separation desktop-hidden">
             <div class="line"></div>
             <div class="separator"></div>
             <div class="line"></div>
         </div>
         <div id="modal-form-container">
-            <form method="dialog" id="confirmation-form" class="confirmation-dialog__form">
-            <div class="confirmation-dialog__input-container">
-                <label for="guest-name" class="confirmation-form__label">Как Вас зовут ?</label>
-                <input id="guest-name" required class="confirmation-form__input" name="guest_name" placeholder="Имя, фамилия"/>
-            </div>
+            <form method="dialog" id="confirmation-form" class="confirmation__form">
+                <div class="confirmation__input-container">
+                    <label for="guest-name" class="confirmation__label">Как Вас зовут ?</label>
+                    <input id="guest-name" required class="confirmation__input" name="guest_name" placeholder="Имя, фамилия"/>
+                </div>
 
-            <div class="confirmation-dialog__input-container">
-                <label for="guest-will-come" class="confirmation-form__label">Планируете ли вы присутствовать ?</label>
-                <div id="guest-will-come" class="confirmation-form__radio-container">
-                    <div class="confirmation-form__radio-wrapper">
-                        <input type="radio" id="guest-yes" name="will_come" value="yes" checked/>
-                        <label for="guest-yes">Да, конечно</label>
-                    </div>
-
-                    <div class="confirmation-form__radio-wrapper">
-                        <input type="radio" id="guest-maybe" name="will_come" value="maybe"/>
-                        <label for="guest-maybe">Пока не знаю</label>
-                    </div>
-
-                    <div class="confirmation-form__radio-wrapper">
-                        <input type="radio" id="guest-no" name="will_come" value="no"/>
-                        <label for="guest-no">Не смогу</label>
+                <div class="confirmation__input-container">
+                    <label for="guest-will-come" class="confirmation__label">Планируете ли вы присутствовать ?</label>
+                    <div id="guest-will-come" class="confirmation__radio-container">
+                        <div class="confirmation__radio-wrapper">
+                            <input type="radio" id="guest-yes" name="will_come" value="yes" checked/>
+                            <label for="guest-yes">Да, конечно</label>
+                        </div>
+                        <div class="confirmation__radio-wrapper">
+                            <input type="radio" id="guest-maybe" name="will_come" value="maybe"/>
+                            <label for="guest-maybe">Пока не знаю</label>
+                        </div>
+                        <div class="confirmation__radio-wrapper">
+                            <input type="radio" id="guest-no" name="will_come" value="no"/>
+                            <label for="guest-no">Не смогу</label>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="confirmation-dialog__input-container">
-                <label for="guest-with" class="confirmation-form__label">Если Вы планируете присутствовать не одни, заполните поле ниже:</label>
-                <input id="guest-with" class="confirmation-form__input" name="with_guest" placeholder="Имя, фамилия" />
-            </div>
+                <div class="confirmation__input-container">
+                    <label for="guest-with" class="confirmation__label">Если Вы планируете присутствовать не одни, заполните поле ниже:</label>
+                    <input id="guest-with" class="confirmation__input" name="with_guest" placeholder="Имя, фамилия" />
+                </div>
 
-            <div class="confirmation-dialog__input-container">
-                <label for="guest-preferences" class="confirmation-form__label">Ваши предпочтения</label>
-                <div id="guest-preferences" class="confirmation-dialog__input-container">
-                    <div class="confirmation-dialog__input-container preferences">
-                        <input type="checkbox" id="guest-champagne" name="preferences_champagne" class="confirmation-form__checkbox" />
-                        <label for="guest-champagne" class="confirmation-form__label">Шампанское</label>
-                    </div>
-
-                    <div class="confirmation-dialog__input-container preferences">
-                        <input type="checkbox" id="guest-red-wine" name="preferences_red_wine" class="confirmation-form__checkbox" />
-                        <label for="guest-red-wine" class="confirmation-form__label">Красное вино</label>
-                    </div>
-
-                    <div class="confirmation-dialog__input-container preferences">
-                        <input type="checkbox" id="guest-white-wine" name="preferences_white_wine" class="confirmation-form__checkbox" />
-                        <label for="guest-white-wine" class="confirmation-form__label">Белое вино</label>
-                    </div>
-
-                    <div class="confirmation-dialog__input-container preferences">
-                        <input type="checkbox" id="guest-vodka" name="preferences_vodka" class="confirmation-form__checkbox" />
-                        <label for="guest-vodka" class="confirmation-form__label">Водка</label>
-                    </div>
-
-                    <div class="confirmation-dialog__input-container preferences">
-                        <input type="checkbox" id="guest-rum" name="preferences_rum" class="confirmation-form__checkbox" />
-                        <label for="guest-rum" class="confirmation-form__label">Ром</label>
-                    </div>
-
-                    <div class="confirmation-dialog__input-container preferences">
-                        <input type="checkbox" id="guest-whiskey" name="preferences_whiskey" class="confirmation-form__checkbox" />
-                        <label for="guest-whiskey" class="confirmation-form__label">Виски</label>
-                    </div>
-
-                    <div class="confirmation-dialog__input-container preferences">
-                        <input type="checkbox" id="guest-jin" name="preferences_jin" class="confirmation-form__checkbox" />
-                        <label for="guest-jin" class="confirmation-form__label">Джин</label>
-                    </div>
-
-                    <div class="confirmation-dialog__input-container preferences">
-                        <input type="checkbox" id="guest-all" name="preferences_all" class="confirmation-form__checkbox" />
-                        <label for="guest-all" class="confirmation-form__label">Все, что горит</label>
-                    </div>
-
-                    <div class="confirmation-dialog__input-container preferences">
-                        <input type="checkbox" id="guest-nothing" name="preferences_nothing" class="confirmation-form__checkbox" />
-                        <label for="guest-nothing" class="confirmation-form__label">Не пью</label>
+                <div class="confirmation__input-container">
+                    <label class="confirmation__label">Ваши предпочтения</label>
+                    <div id="guest-preferences" class="confirmation__preferences-grid">
+                        <div class="confirmation__preference-item">
+                            <input type="checkbox" id="guest-champagne" name="preferences_champagne" class="confirmation__checkbox" />
+                            <label for="guest-champagne" class="confirmation__label">Шампанское</label>
+                        </div>
+                        <div class="confirmation__preference-item">
+                            <input type="checkbox" id="guest-red-wine" name="preferences_red_wine" class="confirmation__checkbox" />
+                            <label for="guest-red-wine" class="confirmation__label">Красное вино</label>
+                        </div>
+                        <div class="confirmation__preference-item">
+                            <input type="checkbox" id="guest-white-wine" name="preferences_white_wine" class="confirmation__checkbox" />
+                            <label for="guest-white-wine" class="confirmation__label">Белое вино</label>
+                        </div>
+                        <div class="confirmation__preference-item">
+                            <input type="checkbox" id="guest-vodka" name="preferences_vodka" class="confirmation__checkbox" />
+                            <label for="guest-vodka" class="confirmation__label">Водка</label>
+                        </div>
+                        <div class="confirmation__preference-item">
+                            <input type="checkbox" id="guest-rum" name="preferences_rum" class="confirmation__checkbox" />
+                            <label for="guest-rum" class="confirmation__label">Ром</label>
+                        </div>
+                        <div class="confirmation__preference-item">
+                            <input type="checkbox" id="guest-whiskey" name="preferences_whiskey" class="confirmation__checkbox" />
+                            <label for="guest-whiskey" class="confirmation__label">Виски</label>
+                        </div>
+                        <div class="confirmation__preference-item">
+                            <input type="checkbox" id="guest-jin" name="preferences_jin" class="confirmation__checkbox" />
+                            <label for="guest-jin" class="confirmation__label">Джин</label>
+                        </div>
+                        <div class="confirmation__preference-item">
+                            <input type="checkbox" id="guest-all" name="preferences_all" class="confirmation__checkbox" />
+                            <label for="guest-all" class="confirmation__label">Все, что горит</label>
+                        </div>
+                        <div class="confirmation__preference-item">
+                            <input type="checkbox" id="guest-nothing" name="preferences_nothing" class="confirmation__checkbox" />
+                            <label for="guest-nothing" class="confirmation__label">Не пью</label>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="separation desktop-hidden">
-                <div class="line"></div>
-                <div class="separator"></div>
-                <div class="line"></div>
-            </div>
+                <div class="separation confirmation__separation desktop-hidden">
+                    <div class="line"></div>
+                    <div class="separator"></div>
+                    <div class="line"></div>
+                </div>
 
-            <button type="submit" class="button">Отправить</button>
-        </form>
+                <button type="submit" class="button confirmation__submit-btn">Отправить</button>
+            </form>
         </div>
     </dialog>
-</div>
+</section>
+
 
 <!--Footer section-->
 <footer>
-    <img src="./assets/footer-img.JPG" alt="footer-image" class="footer__img">
+    <img src="./assets/footer-img.JPG" alt="Владислав и Мария" class="footer__img">
     <div class="footer__overlay">
-        <span class="footer__overlay-title">До скорой встречи! С любовью,</span>
-        <span class="footer__overlay-description">Владислав & <br> Мария</span>
+        <span class="footer__title">До скорой встречи! С любовью,</span>
+        <span class="footer__names">Владислав & <br> Мария</span>
     </div>
 </footer>
 </body>
-<script>
-    const dialog = document.getElementById('confirmation-dialog');
-    const openButton = document.getElementById('confirmation-dialog-open');
-    const closeButton = document.getElementById('confirmation-dialog-close');
-    const body = document.getElementsByTagName('body')[0];
-    const form = document.getElementById('confirmation-form');
-    const desktopContainer = document.getElementById('desktop-form-container');
-    const mobileContainer = document.getElementById('modal-form-container');
-
-    const WEDDING_DATE = new Date(2026, 7, 29, 16, 0, 0).getTime();
-
-    let countdownInterval;
-
-    const daysElement = document.getElementById('days');
-    const hoursElement = document.getElementById('hours');
-    const minutesElement = document.getElementById('minutes');
-    const secondsElement = document.getElementById('seconds');
-    const daysContainer = daysElement?.parentElement;
-    const timeoutWrapper = document.querySelector('.timeout-date-wrapper');
-
-    openButton.addEventListener('click', async () => {
-        await dialog.showModal();
-        body.style.overflowY = 'hidden';
-    })
-
-    closeButton.addEventListener('click', () => {
-        dialog.close()
-        body.style.overflowY = 'auto';
-    })
-
-    dialog.addEventListener('close', () => {
-        body.style.overflowY = 'auto';
-
-        if (window.innerWidth < 560) {
-            form.reset();
-        }
-    });
-
-    function handleResponsiveForm() {
-        if (window.innerWidth >= 560) {
-            if (!desktopContainer.contains(form)) {
-                desktopContainer.appendChild(form);
-                dialog.close();
-            }
-        } else {
-            if (!mobileContainer.contains(form)) {
-                mobileContainer.appendChild(form);
-            }
-        }
-    }
-
-    window.addEventListener('resize', handleResponsiveForm);
-    handleResponsiveForm();
-
-    form.addEventListener('submit', async (event) => {
-        event.preventDefault();
-
-        const formData = new FormData(event.target);
-        const data = {
-            preferences: {},
-            guest_name: formData.get('guest_name'),
-            will_come: formData.get('will_come'),
-            with_guest: formData.get('with_guest')
-        };
-
-        formData.forEach((value, key) => {
-            if (key.startsWith('preferences_')) {
-                const prefKey = key.replace('preferences_', '');
-                data.preferences[prefKey] = true;
-            }
-        });
-
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzIcWLviPALDBInYQ5IMk9KjuerHgUNlC3OD7LrQEX-SKD3NG4_1sC8Fpoj-krlBz6bkg/exec';
-
-        try {
-            const submitBtn = event.target.querySelector('button[type="submit"]');
-            submitBtn.disabled = true;
-            submitBtn.innerText = 'Отправляем...';
-
-            await fetch(scriptURL, {
-                method: 'POST',
-                mode: 'no-cors',
-                cache: 'no-cache',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            });
-
-            alert('Спасибо! Ваша анкета успешно отправлена.');
-
-            if (dialog.open) dialog.close();
-            form.reset();
-
-        } catch (error) {
-            console.error('Ошибка отправки:', error);
-            alert('Произошла ошибка. Попробуйте еще раз или напишите нам лично.');
-        } finally {
-            const submitBtn = event.target.querySelector('button[type="submit"]');
-            submitBtn.disabled = false;
-            submitBtn.innerText = 'Отправить';
-        }
-    });
-
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = WEDDING_DATE - now;
-
-        if (distance < 0) {
-            clearInterval(countdownInterval);
-            if (timeoutWrapper) timeoutWrapper.innerHTML = "Мы уже женаты! ❤️";
-            return;
-        }
-
-        const d = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const s = Math.floor((distance % (1000 * 60)) / 1000);
-
-        if (d > 99) {
-            daysContainer?.classList.add('extra-margin');
-        } else {
-            daysContainer?.classList.remove('extra-margin');
-        }
-
-        daysElement.textContent = d;
-        hoursElement.textContent = h.toString().padStart(2, '0');
-        minutesElement.textContent = m.toString().padStart(2, '0');
-        secondsElement.textContent = s.toString().padStart(2, '0');
-    }
-
-    setInterval(updateCountdown, 1000);
-
-    updateCountdown();
-</script>
+<script src="js/index.js"></script>
 </html>
