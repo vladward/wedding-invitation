@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Vlad & Maria</title>
+    <title>Wedding Vlad + Maria</title>
+    <link rel="icon" href="./public/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
@@ -139,10 +140,10 @@
             </span>
                 <span class="location__info-time">Сбор гостей - 16:00</span>
             </div>
-            <button class="button">
+            <a class="button" href="https://yandex.by/maps/org/usadba_dolina_zarechnaya/197415965740/?ll=24.738965%2C53.550586&z=16" target="_blank" rel="noopener noreferrer">
                 <span>Как добраться</span>
                 <img src="./assets/icon-arrow-right.png" alt="icon-arrow-right" class="location__footer-button"/>
-            </button>
+            </a>
         </div>
     </div>
 </div>
@@ -195,28 +196,28 @@
     </div>
     <div class="timeout-date-wrapper">
         <div class="time-out-date__container">
-            <span class="time-out-date__count">150</span>
+            <span id="days" class="time-out-date__count"></span>
             <span class="time-out-date__description">Дней</span>
         </div>
 
         <div>/</div>
 
         <div class="time-out-date__container">
-            <span class="time-out-date__count">09</span>
+            <span id="hours" class="time-out-date__count"></span>
             <span class="time-out-date__description">Часов</span>
         </div>
 
         <div>/</div>
 
         <div class="time-out-date__container">
-            <span class="time-out-date__count">33</span>
+            <span id="minutes" class="time-out-date__count"></span>
             <span class="time-out-date__description">Минут</span>
         </div>
 
         <div>/</div>
 
         <div class="time-out-date__container">
-            <span class="time-out-date__count">34</span>
+            <span id="seconds" class="time-out-date__count"></span>
             <span class="time-out-date__description">Секунд</span>
         </div>
     </div>
@@ -386,6 +387,17 @@
     const desktopContainer = document.getElementById('desktop-form-container');
     const mobileContainer = document.getElementById('modal-form-container');
 
+    const WEDDING_DATE = new Date(2026, 7, 29, 16, 0, 0).getTime();
+
+    let countdownInterval;
+
+    const daysElement = document.getElementById('days');
+    const hoursElement = document.getElementById('hours');
+    const minutesElement = document.getElementById('minutes');
+    const secondsElement = document.getElementById('seconds');
+    const daysContainer = daysElement?.parentElement;
+    const timeoutWrapper = document.querySelector('.timeout-date-wrapper');
+
     openButton.addEventListener('click', async () => {
         await dialog.showModal();
         body.style.overflowY = 'hidden';
@@ -425,18 +437,80 @@
 
         const formData = new FormData(event.target);
         const data = {
-            preferences: {}
+            preferences: {},
+            guest_name: formData.get('guest_name'),
+            will_come: formData.get('will_come'),
+            with_guest: formData.get('with_guest')
         };
 
         formData.forEach((value, key) => {
-            if (key.includes('preferences')) {
-                const prefKey = key.replace('preferences_', '').replace(/[\[\]]/g, '');
+            if (key.startsWith('preferences_')) {
+                const prefKey = key.replace('preferences_', '');
                 data.preferences[prefKey] = true;
-            } else {
-                data[key] = value;
             }
         });
-        console.log('Form Values:', data);
-    })
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzIcWLviPALDBInYQ5IMk9KjuerHgUNlC3OD7LrQEX-SKD3NG4_1sC8Fpoj-krlBz6bkg/exec';
+
+        try {
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Отправляем...';
+
+            await fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                cache: 'no-cache',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            alert('Спасибо! Ваша анкета успешно отправлена.');
+
+            if (dialog.open) dialog.close();
+            form.reset();
+
+        } catch (error) {
+            console.error('Ошибка отправки:', error);
+            alert('Произошла ошибка. Попробуйте еще раз или напишите нам лично.');
+        } finally {
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            submitBtn.disabled = false;
+            submitBtn.innerText = 'Отправить';
+        }
+    });
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = WEDDING_DATE - now;
+
+        if (distance < 0) {
+            clearInterval(countdownInterval);
+            if (timeoutWrapper) timeoutWrapper.innerHTML = "Мы уже женаты! ❤️";
+            return;
+        }
+
+        const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+        if (d > 99) {
+            daysContainer?.classList.add('extra-margin');
+        } else {
+            daysContainer?.classList.remove('extra-margin');
+        }
+
+        daysElement.textContent = d;
+        hoursElement.textContent = h.toString().padStart(2, '0');
+        minutesElement.textContent = m.toString().padStart(2, '0');
+        secondsElement.textContent = s.toString().padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+
+    updateCountdown();
 </script>
 </html>
