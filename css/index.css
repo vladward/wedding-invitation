@@ -6,6 +6,7 @@
   --ivory-primary: #FFFDFC;
   --white-secondary: #FFFFFF;
   --bg-decorative: #F5F5F5;
+  --bg-border: #D9D9D9;
 
   --font-primary: 'Montserrat', sans-serif;
   --font-secondary: 'Cormorant Garamond', serif;
@@ -61,6 +62,10 @@ html, body {
   line-height: var(--lh-150);
 }
 
+body {
+  box-sizing: border-box;
+}
+
 h2 {
   all: unset;
   display: block;
@@ -91,6 +96,52 @@ h2 {
 .button:active {
   filter: brightness(0.9);
 }
+
+.close-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.btn-line {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: var(--black-secondary);
+  border-radius: 2px;
+}
+
+.btn-line:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.btn-line:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.close-btn:active {
+  transform: scale(0.9);
+}
+
+.desktop-hidden { display: flex!important; }
+
+.mobile-hidden { display: none!important; }
 
 .separation {
   display: flex;
@@ -591,7 +642,7 @@ h2 {
 }
 
 /*Confirmation*/
-.confirmation {
+.confirmation-mobile {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -610,6 +661,135 @@ h2 {
   text-align: center;
   font-size: 14px;
   line-height: 1.2;
+}
+
+#desktop-form-container .confirmation-dialog__form {
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.confirmation__date {
+  font-size: var(--fs-14);
+  font-weight: var(--fw-medium);
+}
+
+.open-confirmation-dialog-button {
+  display: flex;
+}
+
+.confirmation-dialog[open] {
+  padding: 24px;
+  max-width: 100%;
+  max-height: 100%;
+  border: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.confirmation-dialog .separation {
+  margin: 0 auto;
+}
+
+.confirmation-dialog__title {
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: var(--fw-medium);
+}
+
+.confirmation .separation {
+  flex-direction: row;
+  width: 70%;
+  height: 12px;
+}
+
+.confirmation .separation .line {
+  width: 100%;
+  height: 1px;
+  background: var(--grey-primary);
+}
+
+.confirmation-dialog__form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: flex-start;
+}
+
+.confirmation-dialog__input-container {
+  width: 100%;
+}
+
+.confirmation-form__label {
+  font-size: var(--fs-16);
+  line-height: 1.2;
+  text-align: start;
+  font-weight: var(--fw-medium);
+}
+
+.confirmation-form__input {
+  width: 100%;
+  border: 1px solid var(--bg-border);
+  padding: 10px;
+  margin-left: 2px;
+}
+
+.confirmation-form__input::placeholder {
+  color: var(--bg-border);
+  content: 'Имя, фамилия'
+}
+
+.confirmation-form__radio-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.confirmation-form__radio-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 4px;
+}
+
+.confirmation-form__radio-wrapper label {
+  line-height: 1;
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-16);
+}
+
+input[type="radio"] {
+  transform: scale(1.4);
+  accent-color: var(--black-secondary);
+}
+
+.confirmation-dialog__input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.preferences {
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.preferences label {
+  line-height: 1;
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-16);
+}
+
+input[type="checkbox"] {
+  transform: scale(1.4);
+  accent-color: var(--black-secondary);
 }
 
 /*Footer section*/
@@ -751,6 +931,11 @@ footer {
     object-fit: contain;
     justify-content: center;
   }
+
+  .desktop-hidden { display: none !important; }
+  .mobile-hidden { display: flex !important; }
+
+  .confirmation-dialog { display: none; }
 }
 
 @media (min-width: 768px) {
