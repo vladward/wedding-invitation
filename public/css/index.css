@@ -187,7 +187,7 @@ h1, h2 {
 .greetings__date {
   white-space: nowrap;
   overflow: hidden;
-  width: 100%;
+  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -198,7 +198,7 @@ h1, h2 {
 
 .greetings__date .line {
   height: 1px;
-  width: 25%;
+  width: 100%;
   background-color: var(--grey-primary);
 }
 
