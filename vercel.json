@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "public": true,
+  "cleanUrls": true,
+  "framework": null,
+  "installCommand": "echo 'Skipping install'",
+  "buildCommand": "echo 'Skipping build'",
+  "outputDirectory": "public"
+}
