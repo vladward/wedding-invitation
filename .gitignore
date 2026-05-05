@@ -1,0 +1,17 @@
+node_modules/
+package-lock.json
+package.json
+playwright.config.js
+tests/
+test-results/
+playwright-report/
+blob-report/
+
+.idea/
+*.iml
+*.xml
+
+.DS_Store
+Thumbs.db
+
+.vercel/
