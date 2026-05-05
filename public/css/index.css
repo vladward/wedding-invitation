@@ -161,8 +161,9 @@ h1, h2 {
 .greetings {
   display: flex;
   flex-direction: column;
-  gap: var(--space-m);
+  justify-content: space-evenly;
   background: var(--bg-decorative);
+  min-height: 100vh;
 }
 
 .greetings__info {
