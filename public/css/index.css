@@ -656,7 +656,27 @@ h1, h2 {
 }
 
 .confirmation__open-btn {
-  display: flex;
+  background: var(--black-primary);
+  overflow: hidden;
+}
+
+.confirmation__open-btn span {
+  display: inline-block;
+  animation: textFloat 3s ease-in-out infinite;
+}
+
+.confirmation__open-btn img {
+  animation: arrowSlide 2s ease-in-out infinite;
+}
+
+@keyframes textFloat {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-5px); }
+}
+
+@keyframes arrowSlide {
+  0%, 100% { transform: translateX(0); opacity: 1; }
+  50% { transform: translateX(15px); opacity: 0.5; }
 }
 
 /* --- Dialog --- */
